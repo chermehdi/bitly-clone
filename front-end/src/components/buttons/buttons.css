@@ -1,0 +1,8 @@
+.logo__button {
+    text-decoration: none;
+    background: transparent;
+}
+
+.logo__button img {
+    max-width: 1.75rem;
+}
