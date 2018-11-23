@@ -5,7 +5,7 @@ export default class HomeView extends Component {
     return (
       <div>
         <h1> Hello MQL </h1>
-        
+        <button onClick={this.props.onClick}>toggle sidebar</button>
       </div>
     )
   }

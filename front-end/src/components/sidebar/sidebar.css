@@ -1,0 +1,56 @@
+.sidebar__container {
+    z-index: 101;
+    padding-top: 2rem;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: var(--purple);
+    transform: translateX(-100%);
+    transition: all 0.3s var(--timing-function);
+}
+
+.sidebar__container.open {
+    transform: translateX(0);
+}
+
+.sidebar__container .sidebar__link div {
+    transition: all 0.5s var(--timing-function);
+    text-align: center;
+    padding: .5rem 1rem;
+}
+
+.sidebar__container .sidebar__link div:hover {
+    background-color: var(--lighter-purple);
+}
+
+.sidebar__container .sidebar__link div:hover {
+    color: var(--purple);
+}
+
+.sidebar__container .sidebar__link {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.2rem;
+    transition: all 0.5s var(--timing-function);
+}
+
+.sidebar__container .sidebar__link:hover div {
+    font-weight: 700;
+}
+
+.shader.open {
+    z-index: 100;
+    background-color: rgba(149, 117, 205, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.shader {
+    z-index: -1;
+    background-color: transparent;
+    transition: all 0.3s var(--timing-function);
+}

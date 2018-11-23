@@ -7,7 +7,10 @@ import './navigation.css'
 const Navigation = (props) => {
   const { links } = props
   const childLinks = links.map(link => (
-    <Link className="navigation__link" key={link.url} to={link.url}>{link.label}</Link>   
+    <Link className="navigation__link"
+          key={link.url}
+          to={link.url}>
+    {link.label}</Link>   
   ))
   return (
     <div className="navigation__container">

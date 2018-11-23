@@ -6,10 +6,11 @@
     --dark-purple: #512DA8;
     --dark-blue: #311B92;
     --purple: #673AB7;
-    --light-purple: #9575CD;
+    --light-purple: rgb(149, 117, 205);
     --lighter-purple: #D1C4E9;
     --white: #fff;
     --black: #000;
+    --timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 * {
