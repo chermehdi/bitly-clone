@@ -7,7 +7,7 @@
     width: 200px;
     background-color: var(--purple);
     transform: translateX(-100%);
-    transition: all 0.3s var(--timing-function);
+    transition: all 0.3s var(--smooth-timing-function);
 }
 
 .sidebar__container.open {
@@ -15,7 +15,7 @@
 }
 
 .sidebar__container .sidebar__link div {
-    transition: all 0.5s var(--timing-function);
+    transition: all 0.3s var(--smooth-timing-function);
     text-align: center;
     padding: .5rem 1rem;
 }
@@ -43,6 +43,7 @@
     z-index: 100;
     background-color: rgba(149, 117, 205, 0.4);
     position: absolute;
+    opacity: 1;
     top: 0;
     left: 0;
     right: 0;
@@ -52,5 +53,6 @@
 .shader {
     z-index: -1;
     background-color: transparent;
-    transition: all 0.3s var(--timing-function);
+    opacity: 0;
+    transition: all 0.3s var(--smooth-timing-function);
 }

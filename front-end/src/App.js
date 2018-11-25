@@ -34,24 +34,25 @@ class App extends Component {
   closeSidebar = () => {
     console.log('close sidebar')
     this.setState(state => {
-      return { sidebar: {...state.sidebar, isOpen: false} }
+      return {sidebar: {...state.sidebar, isOpen: false}}
     })
   }
+
   render() {
     return (
-      <div className="app">
-        <Navigation links={this.state.navigationLinks} />
-        <SideBar 
-          links={this.state.sidebar.links}
-          isOpen={this.state.sidebar.isOpen}
-        />
-        <Router>
-          <HomeView path="/" onClick={this.openSidebar}/>
-        </Router>
-        <Shader 
-          isShowing={this.state.sidebar.isOpen}
-          dispose={this.closeSidebar} />
-      </div>
+        <div className="app">
+          <Navigation links={this.state.navigationLinks}/>
+          <SideBar
+              links={this.state.sidebar.links}
+              isOpen={this.state.sidebar.isOpen}
+          />
+          <Router>
+            <HomeView path="/" onClick={this.openSidebar}/>
+          </Router>
+          <Shader
+              isShowing={this.state.sidebar.isOpen}
+              dispose={this.closeSidebar}/>
+        </div>
     );
   }
 }
