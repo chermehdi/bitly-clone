@@ -1,0 +1,15 @@
+.card__container {
+    background-color: var(--white);
+    color: var(--dark-purple);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: .7rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+    transition: all .3s var(--smooth-timing-function);
+    margin: .5rem 0;
+}
+
+.card__body {
+    padding: 1rem;
+}

@@ -1,5 +1,11 @@
 import ButtonIcon from './ButtonIcon'
+import LinkButtonIcon from './LinkButtonIcon'
+import Button from './Button'
+import LinkButton from './LinkButton'
 
 export {
-  ButtonIcon
+  ButtonIcon,
+    LinkButtonIcon,
+    Button,
+    LinkButton
 }
