@@ -1,0 +1,52 @@
+.input__container {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.input__container input {
+    border: none;
+    background: transparent;
+    line-height: 20px;
+    margin-right: .5rem;
+}
+
+.input__container input {
+    color: var(--white);
+    line-height: 20px;
+    font-family: var(--sans-serif-font);
+}
+
+.input__container .icon {
+    z-index: -2;
+    opacity: 0;
+    transform: translateX(-100px);
+    color: var(--light-purple);
+    transition: all .3s var(--smooth-timing-function);
+}
+
+.input__container input:focus ~ .icon {
+    z-index: 0;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+:focus{outline: none;}
+
+.text__input {border: 1px solid #ccc; padding: 7px 14px 9px; transition: 0.4s var(--smooth-timing-function);}
+
+.text__input ~ .focus-border:before,
+.text__input ~ .focus-border:after{content: ""; position: absolute; top: 0; left: 50%; width: 0; height: 2px; background-color: var(--light-purple); transition: 0.4s var(--smooth-timing-function);}
+.text__input ~ .focus-border:after{top: auto; bottom: 0;}
+.text__input ~ .focus-border i:before,
+.text__input ~ .focus-border i:after{content: ""; position: absolute; top: 50%; left: 0; width: 2px; height: 0; background-color: var(--light-purple); transition: 0.6s var(--smooth-timing-function);}
+.text__input ~ .focus-border i:after{left: auto; right: 0;}
+.text__input:focus ~ .focus-border:before,
+.text__input:focus ~ .focus-border:after{left: 0; width: 100%; transition: 0.4s var(--smooth-timing-function);}
+.text__input:focus ~ .focus-border i:before,
+.text__input:focus ~ .focus-border i:after{top: 0; height: 100%; transition: 0.6s var(--smooth-timing-function);}
+
+.text__input::placeholder,
+.text__input {
+    color: var(--dark-purple);
+}

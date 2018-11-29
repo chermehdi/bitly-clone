@@ -1,6 +1,8 @@
 .sidebar__container {
     z-index: 101;
     padding-top: 2rem;
+    padding-left: .5rem;
+    padding-right:.5rem;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -16,27 +18,41 @@
 
 .sidebar__container .sidebar__link div {
     transition: all 0.3s var(--smooth-timing-function);
-    text-align: center;
     padding: .5rem 1rem;
 }
 
 .sidebar__container .sidebar__link div:hover {
+    color: var(--purple);
     background-color: var(--lighter-purple);
+}
+
+.sidebar__link div .icon {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.sidebar__link div:hover .icon {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .sidebar__container .sidebar__link div:hover {
     color: var(--purple);
+    background-color: var(--lighter-purple);
 }
 
 .sidebar__container .sidebar__link {
     text-decoration: none;
     color: var(--white);
     font-size: 1.2rem;
+    display: block;
+    text-align: left;
     transition: all 0.5s var(--timing-function);
 }
 
 .sidebar__container .sidebar__link:hover div {
     font-weight: 700;
+    transform: translateX(10px);
 }
 
 .shader.open {

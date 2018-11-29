@@ -1,7 +1,9 @@
 import HomeView from './HomeView'
+import LoginView from './LoginView'
 
 export {
-  HomeView
+  HomeView,
+  LoginView
 }
 
 export default HomeView

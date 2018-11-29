@@ -15,7 +15,7 @@ const Navigation = (props) => {
   return (
     <div className="navigation__container">
       <div className="navigation__inner">
-        <ButtonIcon to="/" alt="bitly clone" icon={logo} />
+        <ButtonIcon onClick={props.clickedIcon} to="/" alt="bitly clone" icon={logo} />
         {/* <ButtonIcon to="/" alt="bitly clone" icon={logo} data-hello="hello" /> */}
         <div className="spacer" />
         {childLinks}
