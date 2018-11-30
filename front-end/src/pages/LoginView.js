@@ -21,16 +21,17 @@ export default class LoginView extends React.Component {
     email: '',
     password: ''
   }
-  handleEmailChange = (e) => {
-    this.setState({email: e})
+  handleEmailChange = (value) => {
+    this.setState({email: value})
   }
 
-  handlePasswordChange = (e) => {
-    this.setState({password: e})
+  handlePasswordChange = (value) => {
+    this.setState({password: value})
   }
 
-  login = (e) => {
-    e.preventDefault()
+  login = (event) => {
+    event.preventDefault()
+    // do the submit logic here !
     console.log('submit ', this.state)
   }
 
