@@ -2,6 +2,7 @@ import React from 'react'
 import { ContentCard } from '../components/cards'
 import { Input } from '../components/forms'
 import { Button } from '../components/buttons'
+import { AuthService } from '../service'
 
 const styles = {
   submit: {
@@ -16,15 +17,22 @@ const styles = {
   }
 }
 
-export default class LoginView extends React.Component {
+export default class SignupView extends React.Component {
   state = {
     email: '',
-    password: ''
+    password: '',
+    firstName: '',
+    lastName: ''
+  }
+  handleFirstNameChange = (e) => {
+    this.setState({firstName: e})
+  }
+  handleLastNameChange = (e) => {
+    this.setState({lastName: e})
   }
   handleEmailChange = (e) => {
     this.setState({email: e})
   }
-
   handlePasswordChange = (e) => {
     this.setState({password: e})
   }
@@ -40,8 +48,10 @@ export default class LoginView extends React.Component {
           <h1>Login Information</h1>
           <ContentCard>
             <form onSubmit={this.login}>
-              <Input holderText="Enter your Email : " onChange={this.handleEmailChange}/>
-              <Input holderText="Enter your Password : " onChange={this.handlePasswordChange} password/>
+              <Input holderText="First Name : " onChange={this.handleFirstNameChange}/>
+              <Input holderText="Last Name : " onChange={this.handleLastNameChange}/>
+              <Input holderText="Email : " onChange={this.handleEmailChange}/>
+              <Input holderText="Password : " onChange={this.handlePasswordChange} password/>
               <div style={styles.submit}>
                 <Button type="submit" label="Submit"/>
               </div>

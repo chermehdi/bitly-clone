@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {HomeView, LoginView } from './pages'
+import { HomeView, LoginView, SignupView } from './pages'
 import { Router } from '@reach/router'
 import Navigation from './components/navigation'
 import SideBar, { Shader } from './components/sidebar'
@@ -34,6 +34,9 @@ class App extends Component {
         }
       ],
       isOpen: false
+    },
+    auth: {
+      isAuthenticated: false
     }
   }
   openSidebar = () => {
@@ -55,6 +58,46 @@ class App extends Component {
     console.log('should search for term', e)
   }
 
+  componentWillMount() {
+    if (this.state.auth.isAuthenticated) {
+      this.setState({
+        sidebar: {
+          links: [
+            {
+              url: '/dashboard',
+              label: 'Dashboard',
+              icon: 'fas fa-chart-line'
+            },
+            {
+              url: '/new',
+              label: 'New',
+              icon: 'far fa-plus-square'
+            }
+          ],
+          isOpen: false
+        }
+      })
+    } else {
+      this.setState({
+        sidebar: {
+          links: [
+            {
+              url: '/login',
+              label: 'Login',
+              icon: 'fas fa-chart-line'
+            },
+            {
+              url: '/register',
+              label: 'Register',
+              icon: 'far fa-plus-square'
+            }
+          ],
+          isOpen: false
+        }
+      })
+    }
+  }
+
   render() {
     return (
         <div className="app">
@@ -62,13 +105,15 @@ class App extends Component {
           <SideBar
               links={this.state.sidebar.links}
               isOpen={this.state.sidebar.isOpen}
+              closeSidebar={this.closeSidebar}
           >
-            <Input placeholder="search" icon="fas fa-search" onChange={this.search} hitEnter={this.handleKey}/>
+            {/*<Input placeholder="search" icon="fas fa-search" onChange={this.search} hitEnter={this.handleKey}/>*/}
           </SideBar>
           <ContentContainer style={{margin: "0 auto"}}>
             <Router>
               <HomeView path="/"/>
               <LoginView path="/login"/>
+              <SignupView path="/register"/>
             </Router>
           </ContentContainer>
           <Shader

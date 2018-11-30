@@ -12,8 +12,9 @@
 }
 
 .input__container input {
-    color: var(--white);
+    color: var(--dark-purple);
     line-height: 20px;
+    min-width: 100%;
     font-family: var(--sans-serif-font);
 }
 

@@ -23,10 +23,12 @@ export default class Input extends React.Component {
     }
   }
   render() {
-    const {icon, holderText} = this.props
+    const {icon, holderText, password} = this.props
+    const type = password ? 'password': 'text'
+
     return (
         <div className="input__container">
-          <input className="text__input" type="text" onChange={this.handleChange} onKeyUp={this.handleKey} placeholder={holderText} />
+          <input className="text__input" type={type} onChange={this.handleChange} onKeyUp={this.handleKey} placeholder={holderText} />
             <span className="focus-border">
             	<i />
             </span>
